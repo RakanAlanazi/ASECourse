@@ -1,0 +1,20 @@
+<ion-view view-title="Weather Service">
+  <ion-content class="padding">
+    <div class="list">
+
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="city"  ng-model="city"/>
+        </label>
+        <button class=" button button-calm " value="Search" ng-click = "getWeather()">
+            Search
+        </button>
+      </div>
+
+    </div>
+      <p class="item">Temperature: {{temperatureSource}} F</p>
+      <p class="item">Pressure: {{pressureSource}}</p>
+      <p class="item">Description: {{descSource}}</p>
+
+  </ion-content>
+</ion-view>

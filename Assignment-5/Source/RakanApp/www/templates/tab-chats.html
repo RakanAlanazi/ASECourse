@@ -1,0 +1,30 @@
+<ion-view view-title="Deals Service">
+  <ion-content class="padding">
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        Search for the top five Deals in your city!
+      </div>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" id="txt_placeName" placeholder="Enter city name"/>
+        </label>
+        <button class=" button button-calm " id="btn_getReview" ng-click="getVenues()">
+          Get Deals
+        </button>
+      </div>
+    </div>
+    <div>
+      <ul>
+        <li class="item" ng-repeat="venue in venueList">
+
+          {{venue.category}}: <a  href="" ng-click="getReviews(venue)">{{venue.name}}</a>
+
+        </li>
+      </ul>
+    </div>
+    <div id="div_ReviewList">
+    </div>
+
+  </ion-content>
+</ion-view>
