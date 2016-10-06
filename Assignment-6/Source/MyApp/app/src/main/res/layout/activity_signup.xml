@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content" tools:context="edu.umkc.rakan.myapp.SignupActivity"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:background="@drawable/bg">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Create an Account"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:id="@+id/textView2"
+            android:textColor="#000000"
+            android:textSize="@dimen/abc_action_bar_content_inset_material" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45">
+
+            <TextView
+                android:text="First Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:layout_weight="0.45" />
+
+            <EditText
+                android:id="@+id/LName"
+                android:layout_width="174dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Last Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45" />
+
+            <EditText
+                android:id="@+id/FName"
+                android:layout_width="178dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="124dp"
+            android:layout_height="125dp"
+            android:id="@+id/ibProfilePic"
+            android:src="@drawable/profile_pic"
+            android:textAlignment="gravity"
+            android:visibility="visible"
+            android:adjustViewBounds="false"
+            android:scaleType="fitXY"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:cropToPadding="false"
+            android:background="@null"
+            android:layout_weight="0.22" />
+    </LinearLayout>
+
+    <TextView
+        android:text="Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up" />
+
+</LinearLayout>
