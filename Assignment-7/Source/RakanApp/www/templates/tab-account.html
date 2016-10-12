@@ -1,0 +1,46 @@
+<ion-view view-title="Movies Service" ng-controller='AccountCtrl as movieCtrl'>
+  <ion-content class="padding">
+    <form ng-submit='movieCtrl.formAction()'>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input  type="text" placeholder="Enter movie name"  ng-keypress="movieCtrl.formAction()" ng-model='movieCtrl.movieSearch'/>
+        </label>
+        <button class=" button button-calm " value="Search" ng-click = "getWeather()">
+          Search
+        </button>
+      </div>
+
+    </form>
+    </div>
+    <div class="item item-text-wrap">
+      <h2>Results for: <span ng-bind="movieCtrl.movieSearch"></span></h2>
+    </div>
+    <div ng-show="movieCtrl.movieSearch" id="movieDivs">
+
+      <!-- Display list of movies from search -->
+      <div>
+
+        <div ng-repeat="movie in movies">
+          <li class="item royal" ng-click="movieCtrl.movieSelect(movie.imdbID)  ">
+           {{movie.Title}}  ({{movie.Year}})
+          </li>
+        </div>
+
+      </div>
+      <!-- Display Individual movie data -->
+      <div class="card">
+      <div ng-show="movie">
+        <img class="item" ng-src="{{movie.Poster}}"/>
+        <div>
+
+          <span class="item">{{movie.Title}}</span>
+          <span class="item">({{movie.Year}})</span>
+          <p><span>{{movie.Rated}}</span> | <span>{{movie.Runtime}}</span> | <span>{{movie.Genre}}</span> | <span>{{movie.Released}}</span></p>
+          <p ng-bind='movie.Actors'></p>
+          <p ng-bind='movie.Plot'></p>
+        </div>
+      </div>
+    </div>
+</div>
+  </ion-content>
+</ion-view>

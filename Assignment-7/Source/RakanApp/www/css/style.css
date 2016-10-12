@@ -1,0 +1,97 @@
+/* Empty. Add your own CSS if you like */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+#movieInfo {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  width: 60%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#movieDivs {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 5%;
+}
+
+@media (max-width: 1090px) {
+
+  .movie-title {
+    font-size: x-large;
+  }
+
+}
+
+@media (max-width: 775px) {
+
+  .movie-title {
+    font-size: 1rem;
+  }
+
+}
+
+/* Cell Phone media */
+@media (max-width: 550px) {
+
+  .movie-title {
+    font-size: 1rem;
+    width: 160%;
+  }
+
+  .moveLeft {
+    margin-left: auto !important;
+  }
+
+  #movieDivs {
+    display: block;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.scroll {
+  height: 100%;
+}
