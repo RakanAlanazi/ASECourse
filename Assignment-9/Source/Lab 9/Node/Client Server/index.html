@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Login Page">
+    <meta name="author" content="Rakan Alanazi">
+
+    <title>Welcome To Index page</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link href="app.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- JS -->
+    <!-- load angular, ngRoute, ngAnimate -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+<div class=" col-lg-6 pull-left" style= "left: 20px; top:150px; position: absolute; margin: auto;">
+    <div class="panel panel-info">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">Your current location</h3>
+        </div>
+        <div id="map" class="panel-body" style="height: 650px;" >
+
+        </div>
+    </div>
+</div>
+<div class="col-lg-6" style=" width: 680px; left: 870px; top: 30px" >
+    <div class="page-header">
+    </div>
+    <div ng-controller="View1Ctrl">
+    <div class="panel panel-info">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">Movies theaters near you</h3>
+        </div>
+        <div class="panel-body"  >
+            <div class="row">
+
+                <div class="col-md-4" >
+
+                    <img src="cinema.jpg" class="img-circle center-block" alt="Cinque Terre" width="80px" height="80px">
+
+                </div>
+
+                <div class="col-md-6" style="border-left:1px solid #ccc;height:100px">
+                    <form class="form-horizontal">
+                        <fieldset>
+
+                            <a  style="font-size: large; color: #5e5e5e; text-align: center;">{{theaters1}}</a>
+                            <p><b>Address:</b> {{address1}}</p>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4" >
+
+                    <img src="cinema.jpg" class="img-circle center-block" alt="Cinque Terre" width="80px" height="80px">
+
+                </div>
+
+                <div class="col-md-6" style="border-left:1px solid #ccc;height:100px">
+                    <form class="form-horizontal">
+                        <fieldset>
+
+                            <a  style="font-size: large; color: #5e5e5e; text-align: center;">{{theaters2}}</a>
+                            <p><b>Address:</b> {{address2}}</p>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">The Weather In Your City</h3>
+            </div>
+            <div class="panel-body"  >
+                <div class="row">
+
+                    <div class="col-md-4" >
+
+                        <img src="cloud-icon-16.png" class="img-circle center-block" alt="Cinque Terre" width="80px" height="80px">
+
+                    </div>
+
+                    <div class="col-md-6" style="border-left:1px solid #ccc;height:150px">
+                        <form class="form-horizontal">
+                            <fieldset>
+
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">Tempurture: {{temp}}</h5>
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">pressure:{{pressure}}</h5>
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">humidity:{{humidity}}</h5>
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">temp_min:{{temp_min}}</h5>
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">temp_max:{{temp_max}}</h5>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">Recommended movie for you</h3>
+            </div>
+            <div class="panel-body"  >
+                <div class="row">
+
+                    <div class="col-md-4" >
+
+                        <img src="{{movieIMBDposter}}" class="center-block" alt="Cinque Terre" width="90px" height="90px">
+
+                    </div>
+
+                    <div class="col-md-6" style="border-left:1px solid #ccc;height:200px">
+                        <form class="form-horizontal">
+                            <fieldset>
+
+                                <h3  style=" color: #5e5e5e; text-align: left;">{{movieIMBDtitel}}</h3>
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">Year:{{movieIMBDyear}}</h5>
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">Rated:{{movieIMBDrated}}</h5>
+                                <h5  style="font-size: large; color: #5e5e5e; text-align: left;">Plot:{{movieIMBDplot}}</h5>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+</div>
+</div>
+
+</div>
+<script>
+    // Note: This example requires that you consent to location sharing when
+    // prompted by your browser. If you see the error "The Geolocation service
+    // failed.", it means you probably did not give permission for the browser to
+    // locate you.
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 6
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Location found.');
+                map.setCenter(pos);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPhDNNGAJpRh9sd3iwdxXAThXU_FeK064&callback=initMap">
+</script>
+</body>
+</html>
