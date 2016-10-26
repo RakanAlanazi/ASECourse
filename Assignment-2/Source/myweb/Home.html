@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="" data-ng-app="GoogleDirection">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Login Page">
+    <meta name="author" content="Rakan Alanazi">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js" type="application/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWhSE1HAi753_M8rcFTfcbBXUQInf8y6c&v=3.exp&sensor=true"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/app.js"></script>
+
+
+</head>
+
+<body>
+<div ng-controller="weatherctrl">
+    <input type="text" ng-model="StateValue" />
+    <input type="text" ng-model="CityValue" />
+
+    <button id="btn" ng-click="getWeather()"> Show Weather City1</button>
+    <br/>
+    <br/>
+    <div class="weatherModule">
+        <p class="currentConditions" ng-bind-html-unsafe="currentweather.html"></p>
+        <div class="currentIcon" ng-bind-html-unsafe="currentIcon.html"></div>
+        <h3>{{CityValue}}</h3>
+    </div>
+
+
+
+</div>
+<div  ng-controller="weatherctrl">
+
+    <input type="text" ng-model="StateValue" />
+    <input type="text" ng-model="CityValue" />
+
+    <button id="btn" ng-click="getWeather1()"> Show Weather City2 </button>
+    <br/>
+    <br/>
+    <div class="weatherModule">
+        <p class="currentConditions" ng-bind-html-unsafe="currentweather.html"></p>
+        <div class="currentIcon" ng-bind-html-unsafe="currentIcon.html"></div>
+        <h3>{{CityValue}}</h3>
+    </div>
+</div>
+<div class="wrapp" ng-controller="googlemapoutput">
+    <div class="row">
+        <input type="text"  ng-model="startlocation" id="startlocation"/>
+        <input type="text"  ng-model="endlocation" id="endlocation" />
+        <button id="btn" ng-click="calcRoute()">
+            Get Direction
+        </button>
+        <br/></br>
+    </div>
+    <div id="map-canvas" style="height: 400px;"></div>
+</div>
+<a href="Index.html" class="btn btn-lg btn-primary btn-block">Log Out</a>
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+

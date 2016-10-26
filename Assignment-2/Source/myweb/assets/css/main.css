@@ -1,0 +1,11 @@
+.weatherModule {
+    background: #f2f2f2;
+    height: 150px;
+    width: 250px;
+    border: 1px dashed #ccc;
+    padding: 1em;
+}
+
+#map-canvas {
+    width: 650px;
+    height: 450px;
