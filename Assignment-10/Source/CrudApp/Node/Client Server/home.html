@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Login Page">
+    <meta name="author" content="Rakan Alanazi">
+
+    <title>Welcome To Index page</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- JS -->
+    <!-- load angular, ngRoute, ngAnimate -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body background="bg2.jpg">
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-md-12">
+            <h4>Users Information</h4>
+            <div class="table-responsive">
+
+
+                <table id="mytable" class="table table-bordred-primery table-striped">
+
+                    <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Edit</th>
+
+                    <th>Delete</th>
+                    </thead>
+                    <tbody ng-controller="myCtrl">
+
+                    <tr ng-repeat="movie in movies">
+                        <td>{{movie.fname}}</td>
+                        <td>{{movie.lname}}</td>
+                        <td>{{movie.adress}}</td>
+                        <td>{{movie.email}}</td>
+                        <td>{{movie.phone}}</td>
+                        <td><p title="Edit"><button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+                        <td><p title="Delete"><button class="btn btn-danger btn-xs" ng-click="getShow(movie._id.$oid)"><span class="glyphicon glyphicon-trash"></span></button></p></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<!-- Modal -->
+<div ng-controller="myCtrl" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Updated User Information</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="usr">First Name:</label>
+                        <input type="text" ng-model="FName"class="form-control" id="usr">{{movie.fname}}
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Last Name:</label>
+                        <input type="text" ng-model="LName" class="form-control" id="pwd">{{movie.lname}}
+                    </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="updateShow(movie._id.$oid)">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- angular library TODO: change to min version before release -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script></body>
+</html>
